@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逐字输出示例</title>
+    <script>
+        function typeWriter() {
+            const text = '新年快乐！';
+            const targetElement = document.getElementById('output');
+            let i = 0;
+            setInterval(() => {
+                if (i < text.length) {
+                    targetElement.innerText += text[i];
+                    i++;
+                } else {
+                    clearInterval();
+                }
+            }, 1000);
+        }
+        window.onload = typeWriter;
+    </script>
+</head>
+<body>
+    <p id="output"></p>
+</body>
+</html>
