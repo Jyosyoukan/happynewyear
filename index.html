@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新年快乐</title>
+    <style>
+    #output{
+        font-size:50px;
+        color:yellow;
+        font-family:SimSun;
+        font-weight:0;
+        text-shadow: 5px 5px 5px orange;
+        
+    }
+    body{
+        background-color:red;
+    }
+    </style>
     <script>
+    var myAudio = document.getElementById("myAudio");
+    
+function play() {
+  myAudio.play();
+}
         function typeWriter() {
-            const text = '新年快乐！';
+            const text ="新年快乐:"+"\n 徐绍乾祝你在新的一年里吉祥如意，心想事成！";
             const targetElement = document.getElementById('output');
             let i = 0;
             setInterval(() => {
@@ -15,13 +33,19 @@
                     i++;
                 } else {
                     clearInterval();
+                    play();
                 }
-            }, 1000);
+            }, 350);
         }
         window.onload = typeWriter;
     </script>
 </head>
 <body>
+<audio id="myAudio" controls style="display:none;">
+  <source src="storage/emulated/0/Music/Browser/签到.mp3" type="audio/mpeg">
+</audio>
     <p id="output"></p>
 </body>
 </html>
+
+
